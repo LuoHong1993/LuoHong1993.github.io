@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2019/12/14/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>python学习笔记 一</title>
+    <url>/2018/07/26/python-learning-1/</url>
+    <content><![CDATA[<p><img src="/images/python-learning-1.jpg" alt="bg"></p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>整数、浮点数、字符串</p>
+<p>单引号、双引号、三引号</p>
+<p>转义字符，转义字符\，比如\n表示换行，\t表示制表符，字符\本身也要转义</p>
+<a id="more"></a>
+
+<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br></pre></td></tr></table></figure>
+<p>第一行注释是为了告诉Linux/OS X系统，这是一个Python可执行程序，Windows系统会忽略这个注释；</p>
+<p>第二行注释是为了告诉Python解释器，按照UTF-8编码读取源代码。</p>
+<h2 id="格式化方法"><a href="#格式化方法" class="headerlink" title="格式化方法"></a>格式化方法</h2><p>format()</p>
+<p>执行代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">age = <span class="number">18</span></span><br><span class="line">name = <span class="string">"LuoHong"</span></span><br><span class="line">print(<span class="string">"My name is &#123;0&#125;,I'm &#123;1&#125; "</span>.format(name,age))</span><br><span class="line"><span class="comment"># 使用下划线填充文本，并保持文字处于中间位置</span></span><br><span class="line"><span class="comment"># 使用 (^) 定义 '___hello___'字符串长度为 11</span></span><br><span class="line">print(<span class="string">'&#123;0:_^11&#125;'</span>.format(<span class="string">'Hello'</span>))</span><br><span class="line">print(<span class="string">'&#123;0:_^12&#125;'</span>.format(<span class="string">'Hello'</span>))</span><br><span class="line"><span class="comment"># 对于浮点数 '0.333' 保留小数点(.)后三位</span></span><br><span class="line">print(<span class="string">'&#123;0:.3f&#125;'</span>.format(<span class="number">1.0</span>/<span class="number">3</span>))</span><br><span class="line">print(<span class="string">"&#123;name&#125; like &#123;action&#125; "</span>.format(name=<span class="string">"Jack"</span>,action=<span class="string">"code"</span>))</span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">My name is LuoHong,I&#39;m 18 </span><br><span class="line">___Hello___</span><br><span class="line">___Hello____</span><br><span class="line">0.333</span><br><span class="line">Jack love code</span><br></pre></td></tr></table></figure>
+
+<p>本例源码  <a href="https://gitee.com/hong1993/python-lesson/blob/master/lesson_1_1.py" target="_blank" rel="noopener">lesson_1_1</a></p>
+<h2 id="运算优先级"><a href="#运算优先级" class="headerlink" title="运算优先级"></a>运算优先级</h2><p>从最低优先级（最少绑定）到最高优先级（最多绑定）的优先</p>
+<ul>
+<li>lambda：Lambda 表达式</li>
+<li>if - else ：条件表达式</li>
+<li>or：布尔“或”</li>
+<li>and：布尔“与”</li>
+<li>not x：布尔“非”</li>
+<li>in, not in, is, is not, &lt;, &lt;=, &gt;, &gt;=, !=, ==：比较，包括成员资格测试（Membership Tests）和身份测试（Identity Tests）。</li>
+<li>|：按位或</li>
+<li>^：按位异或</li>
+<li>&amp;：按位与</li>
+<li>&lt;&lt;, &gt;&gt;：移动</li>
+<li>+, -：加与减</li>
+<li>*, /, //, %：乘、除、整除、取余</li>
+<li>+x, -x, ~x：正、负、按位取反</li>
+<li>**：求幂</li>
+<li>x[index], x[index:index], x(arguments…), x.attribute：下标、切片、调用、属性引用<br>(expressions…), [expressions…], {key: value…}, {expressions…}：表示绑定或元组、表示列表、表示字典、表示集合</li>
+</ul>
+<p>注意：相同优先级的运算符将从左至右的方式依次进行求值</p>
+<h2 id="控制流"><a href="#控制流" class="headerlink" title="控制流"></a>控制流</h2><h3 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"--- 2018年海南理工类批次查询 ---"</span>)</span><br><span class="line">scores = int(input(<span class="string">"请输入您的分数:"</span>))</span><br><span class="line">A = <span class="number">539</span></span><br><span class="line">B = <span class="number">488</span></span><br><span class="line"><span class="keyword">if</span> scores &lt; B:</span><br><span class="line">    print(<span class="string">"分数太少，再接再厉！"</span>)</span><br><span class="line"><span class="keyword">elif</span> B &lt;= scores &lt; A:</span><br><span class="line">    print(<span class="string">"本科B批"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"本科A批"</span>)</span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">--- 2018年海南理工类批次查询 ---</span><br><span class="line">请输入您的分数:613</span><br><span class="line">本科A批</span><br></pre></td></tr></table></figure>
+<p>本例源码  <a href="https://gitee.com/hong1993/python-lesson/blob/master/lesson_1_2.py" target="_blank" rel="noopener">lesson_1_2</a></p>
+<p>注意：缩进</p>
+<h3 id="while-语句"><a href="#while-语句" class="headerlink" title="while 语句"></a>while 语句</h3><p>while 语句能让条件为真的前提下重复执行某块语句</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#正确答案</span></span><br><span class="line">key = <span class="string">"yes"</span></span><br><span class="line"><span class="comment">#当前状态</span></span><br><span class="line">status = <span class="number">0</span></span><br><span class="line"><span class="comment">#当条件为真，循环执行下面语句</span></span><br><span class="line"><span class="keyword">while</span> status == <span class="number">0</span>:</span><br><span class="line">    yourInput = input(<span class="string">"LuoHong is a handsome boy? yes or no \n"</span>)</span><br><span class="line">    <span class="keyword">if</span> key == yourInput:</span><br><span class="line">        print(<span class="string">"Congratulations! you're right."</span>)</span><br><span class="line">        <span class="comment">#改变当前状态</span></span><br><span class="line">        status = <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> yourInput == <span class="string">"no"</span>:</span><br><span class="line">        print(<span class="string">"You are an idiot!"</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">"please input yes or no"</span>)</span><br><span class="line"><span class="comment">#当条件为假，结束</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"Done!"</span>)</span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">LuoHong is a handsome boy? yes or no </span><br><span class="line">帅</span><br><span class="line">please input yes or no</span><br><span class="line">LuoHong is a handsome boy? yes or no </span><br><span class="line">no</span><br><span class="line">You are an idiot!</span><br><span class="line">LuoHong is a handsome boy? yes or no </span><br><span class="line">yes</span><br><span class="line">Congratulations! you&#39;re right.</span><br><span class="line">Done!</span><br></pre></td></tr></table></figure>
+<p>本例源码  <a href="https://gitee.com/hong1993/python-lesson/blob/master/lesson_1_3.py" target="_blank" rel="noopener">lesson_1_3</a></p>
+<h3 id="for-语句"><a href="#for-语句" class="headerlink" title="for 语句"></a>for 语句</h3><p>for…in 语句是另一种循环语句，其特点是会在一系列对象上进行迭代（Iterates），意即它会遍历序列中的每一个项目。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 输出1～9数字</span></span><br><span class="line">print(<span class="string">"输出1～9数字"</span>)</span><br><span class="line"><span class="comment"># rang(1,10),获取从1开始，长度为10的序列</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">10</span>):</span><br><span class="line">    <span class="comment"># 注意输出必须保持类型一致，str(i)转成自字符串</span></span><br><span class="line">    print(<span class="string">"第"</span>+str(i)+<span class="string">"名"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"=== 结束 === \n"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 分别输出个位数是奇数和偶数</span></span><br><span class="line">print(<span class="string">"分别输出个位数是奇数和偶数"</span>)</span><br><span class="line">oddNums = <span class="string">"奇数："</span></span><br><span class="line">evenNums = <span class="string">"偶数："</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">10</span>,<span class="number">2</span>):</span><br><span class="line">    oddNums += str(i)+<span class="string">"、"</span></span><br><span class="line">oddNums = oddNums[<span class="number">0</span>:len(oddNums)<span class="number">-1</span>]</span><br><span class="line">print(oddNums)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">10</span>,<span class="number">2</span>):</span><br><span class="line">    evenNums += str(i)+<span class="string">"、"</span></span><br><span class="line">evenNums = evenNums[<span class="number">0</span>:len(evenNums)<span class="number">-1</span>]</span><br><span class="line">print(evenNums)</span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输出1～4数字</span><br><span class="line">第1名</span><br><span class="line">第2名</span><br><span class="line">第3名</span><br><span class="line">&#x3D;&#x3D;&#x3D; 结束 &#x3D;&#x3D;&#x3D; </span><br><span class="line"></span><br><span class="line">分别输出个位数是奇数和偶数</span><br><span class="line">奇数：1、3、5、7、9</span><br><span class="line">偶数：2、4、6、8</span><br></pre></td></tr></table></figure>
+<p>本例源码  <a href="https://gitee.com/hong1993/python-lesson/blob/master/lesson_1_4.py" target="_blank" rel="noopener">lesson_1_4</a></p>
+<h3 id="break-语句"><a href="#break-语句" class="headerlink" title="break 语句"></a>break 语句</h3><p>用以中断循环语句，也就是中止循环语句的执行，即使循环条件没有变更为false，或队列中的项目尚未完全迭代依旧如此。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 循环1～4，当等于3时跳出循环</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">5</span>):</span><br><span class="line">    <span class="keyword">if</span> i == <span class="number">3</span>:</span><br><span class="line">        print(<span class="string">"=== end ==="</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(i)</span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">&#x3D;&#x3D;&#x3D; end &#x3D;&#x3D;&#x3D;</span><br></pre></td></tr></table></figure>
+<p>本例源码  <a href="https://gitee.com/hong1993/python-lesson/blob/master/lesson_1_4.py" target="_blank" rel="noopener">lesson_1_4</a></p>
+<h3 id="continue-语句"><a href="#continue-语句" class="headerlink" title="continue 语句"></a>continue 语句</h3><p>跳过当前循环块中的剩余语句，并继续该循环的下一次迭代</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>指可重复使用的程序片段。<br>函数可以通过关键字 def 来定义。这一关键字后跟一个函数的标识符名称，再跟一对圆括号，其中可以包括一些变量的名称，再以冒号结尾，结束这一行。随后而来的语句块是函数的一部分。</p>
+<h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h3><p>函数可以获取参数，这个参数的值由你所提供。在定义函数时给定的名称称作“形参”（Parameters），在调用函数时你所提供给函数的值称作“实参”（Arguments）。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义名为compare函数，需传x,y参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">compare</span><span class="params">(x,y)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> x &gt; y:</span><br><span class="line">        print(x,<span class="string">"is max num"</span>)</span><br><span class="line">    <span class="keyword">elif</span> x == y:</span><br><span class="line">        print(<span class="string">"equal"</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(y,<span class="string">"is max num"</span>)</span><br><span class="line">a = <span class="number">100</span></span><br><span class="line">b = <span class="number">10</span></span><br><span class="line"><span class="comment"># 调用compare函数，传人参数</span></span><br><span class="line">compare(a,b)</span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">100 is max num</span><br></pre></td></tr></table></figure>
+<p>本例源码  <a href="https://gitee.com/hong1993/python-lesson/blob/master/lesson_1_5.py" target="_blank" rel="noopener">lesson_1_5</a></p>
+<h3 id="局部变量和全局变量"><a href="#局部变量和全局变量" class="headerlink" title="局部变量和全局变量"></a>局部变量和全局变量</h3><p>局部变量：声明变量时，它们不会以任何方式与身处函数之外但具有相同名称的变量产生关系，这些变量名只存在于函数这一局部（Local）。这被称为变量的作用域（Scope）。所有变量的作用域是它们被定义的块，从定义它们的名字的定义点开始。</p>
+<p>可通过global语句来使用全局变量。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">global_str = <span class="string">"haha"</span></span><br><span class="line">global_str2 = <span class="string">"haha"</span></span><br><span class="line"><span class="comment"># 局部使用方法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">localFun</span><span class="params">(global_str)</span>:</span></span><br><span class="line">    print(<span class="string">"global_str="</span>+global_str)</span><br><span class="line">    global_str = <span class="string">"keke"</span></span><br><span class="line">    print(<span class="string">'Changed local global_str to'</span>, global_str)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用global语句改变global_str2值</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">localFun2</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> global_str2</span><br><span class="line">    print(<span class="string">"global_str2="</span> + global_str2)</span><br><span class="line">    global_str2 = <span class="string">"xixi"</span></span><br><span class="line">    print(<span class="string">'Changed global global_str2 to'</span>, global_str2)</span><br><span class="line"></span><br><span class="line">localFun(global_str)</span><br><span class="line">print(global_str)</span><br><span class="line">localFun(<span class="string">"lala"</span>)</span><br><span class="line">print(global_str)</span><br><span class="line">localFun2()</span><br><span class="line">print(global_str2)</span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">global_str&#x3D;haha</span><br><span class="line">Changed local global_str to keke</span><br><span class="line">haha</span><br><span class="line">global_str&#x3D;lala</span><br><span class="line">Changed local global_str to keke</span><br><span class="line">haha</span><br><span class="line">global_str2&#x3D;haha</span><br><span class="line">Changed global global_str2 to xixi</span><br><span class="line">xixi</span><br></pre></td></tr></table></figure>
+<p>本例源码  <a href="https://gitee.com/hong1993/python-lesson/blob/master/lesson_1_5.py" target="_blank" rel="noopener">lesson_1_5</a></p>
+<h3 id="默认参数值"><a href="#默认参数值" class="headerlink" title="默认参数值"></a>默认参数值</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">defultParam</span><span class="params">(msg,time=<span class="number">1</span>)</span>:</span></span><br><span class="line">    print(msg*time)</span><br><span class="line"></span><br><span class="line">defultParam(<span class="string">"hello"</span>)</span><br><span class="line">defultParam(<span class="string">"hello"</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hello</span><br><span class="line">hellohellohello</span><br></pre></td></tr></table></figure>
+<p>本例源码  <a href="https://gitee.com/hong1993/python-lesson/blob/master/lesson_1_5.py" target="_blank" rel="noopener">lesson_1_5</a></p>
+<h3 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h3><p>用命名（关键字）而非位置，来指定函数中的参数，不再需要考虑参数的顺序，只对希望赋予的参数以赋值，只要其它的参数都具有默认参数值</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">keyParam</span><span class="params">(a,b=<span class="number">24</span>,c=<span class="number">25</span>)</span>:</span></span><br><span class="line">    print(<span class="string">"======"</span>)</span><br><span class="line">    print(<span class="string">"a="</span>,a,<span class="string">"\nb="</span>,b,<span class="string">"\nc="</span>,c)</span><br><span class="line"></span><br><span class="line">keyParam(<span class="number">1</span>,c=<span class="number">0</span>)</span><br><span class="line">keyParam(b=<span class="number">3</span>,a=<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">a&#x3D; 1 </span><br><span class="line">b&#x3D; 24 </span><br><span class="line">c&#x3D; 0</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">a&#x3D; 2 </span><br><span class="line">b&#x3D; 3 </span><br><span class="line">c&#x3D; 25</span><br></pre></td></tr></table></figure>
+<p>本例源码  <a href="https://gitee.com/hong1993/python-lesson/blob/master/lesson_1_5.py" target="_blank" rel="noopener">lesson_1_5</a></p>
+<h3 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h3><p>参数数量是可变的，可以通过使用星号来实现。</p>
+<p>声明一个诸如 *param 的星号参数时，从此处开始直到结束的所有位置参数（Positional Arguments）都将被收集并汇集成一个称为“param”的元组（Tuple）。</p>
+<p>声明一个诸如 **param 的双星号参数时，从此处开始直至结束的所有关键字参数都将被收集并汇集成一个名为 param 的字典（Dictionary）。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">complexFun</span><span class="params">(name=<span class="string">"luo"</span>,*years,**about)</span>:</span></span><br><span class="line">    print(<span class="string">"name = "</span>,name)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> years:</span><br><span class="line">        print(<span class="string">"years = "</span>,i)</span><br><span class="line">    <span class="keyword">for</span> first,second <span class="keyword">in</span> about.items():</span><br><span class="line">        print(<span class="string">"about = "</span>,first,second)</span><br><span class="line"></span><br><span class="line">complexFun(<span class="string">"luohong"</span>,<span class="number">2018</span>,<span class="number">2017</span>,age=<span class="number">25</span>,birthday=<span class="string">"1993-03-19"</span>)</span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">name &#x3D;  luohong</span><br><span class="line">years &#x3D;  2018</span><br><span class="line">years &#x3D;  2017</span><br><span class="line">about &#x3D;  age 25</span><br><span class="line">about &#x3D;  birthday 1993-03-19</span><br></pre></td></tr></table></figure>
+<p>本例源码  <a href="https://gitee.com/hong1993/python-lesson/blob/master/lesson_1_5.py" target="_blank" rel="noopener">lesson_1_5</a></p>
+<h3 id="return、pass语句"><a href="#return、pass语句" class="headerlink" title="return、pass语句"></a>return、pass语句</h3><p>return 语句用于从函数中返回，也就是中断函数</p>
+<p>pass 语句用于指示一个没有内容的语句块</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rebackData</span><span class="params">(age)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> age &lt; <span class="number">18</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"children"</span></span><br><span class="line">    <span class="keyword">elif</span> <span class="number">18</span> &lt;= age &lt; <span class="number">100</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"adult"</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">print(rebackData(<span class="number">16</span>))</span><br><span class="line">print(rebackData(<span class="number">25</span>))</span><br><span class="line">print(rebackData(<span class="number">200</span>))</span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">children</span><br><span class="line">adult</span><br><span class="line">None</span><br></pre></td></tr></table></figure>
+<p>本例源码  <a href="https://gitee.com/hong1993/python-lesson/blob/master/lesson_1_5.py" target="_blank" rel="noopener">lesson_1_5</a></p>
+<h3 id="DocStrings"><a href="#DocStrings" class="headerlink" title="DocStrings"></a>DocStrings</h3><p>文档字符串（Documentation Strings）</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">testDoc</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    测试文档</span></span><br><span class="line"><span class="string">    :return:</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    print(<span class="string">"hehe"</span>)</span><br><span class="line"></span><br><span class="line">testDoc()</span><br><span class="line">print(testDoc.__doc__)</span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hehe</span><br><span class="line"></span><br><span class="line">    测试文档</span><br><span class="line">    :return:</span><br></pre></td></tr></table></figure>
+<p>本例源码  <a href="https://gitee.com/hong1993/python-lesson/blob/master/lesson_1_5.py" target="_blank" rel="noopener">lesson_1_5</a></p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Oracle 同义词</title>
+    <url>/2018/07/23/oracle-synonyms/</url>
+    <content><![CDATA[<p><img src="/images/oracle-synonyms.jpg" alt="bg"></p>
+<h2 id="同义词介绍"><a href="#同义词介绍" class="headerlink" title="同义词介绍"></a>同义词介绍</h2><p>&emsp;&emsp;Oracle的同义词（synonyms）从字面上理解就是别名的意思，和视图的功能类似，就是一种映射关系。</p>
+<a id="more"></a>
+
+<ul>
+<li><p>它可以节省大量的数据库空间，对不同用户的操作同一张表没有多少差别;</p>
+</li>
+<li><p>它扩展了数据库的使用范围，能够在不同的数据库用户之间实现无缝交互;</p>
+</li>
+<li><p>同义词是数据库对象的一个别名，经常用于简化对象访问和提高对象访问的安全性。</p>
+</li>
+</ul>
+<h2 id="同义词分类"><a href="#同义词分类" class="headerlink" title="同义词分类"></a>同义词分类</h2><ol>
+<li><p>Oracle公用同义词:由一个特殊的用户组Public所拥有。数据库中所有的用户都可以使用公用同义词。</p>
+</li>
+<li><p>Oracle私有同义词:与公用同义词所对应，由创建他的用户所有。这个同义词的创建者，可以通过授权控制其他用户是否有权使用属于自己的私有同义词。</p>
+</li>
+</ol>
+<h2 id="创建同义词"><a href="#创建同义词" class="headerlink" title="创建同义词"></a>创建同义词</h2><h5 id="给用户user-temp创建同义词的权限-私有同义词需执行本步骤"><a href="#给用户user-temp创建同义词的权限-私有同义词需执行本步骤" class="headerlink" title="给用户user_temp创建同义词的权限(私有同义词需执行本步骤)"></a>给用户user_temp创建同义词的权限(私有同义词需执行本步骤)</h5><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">CREATE</span> <span class="keyword">SYNONYM</span> <span class="keyword">TO</span> user_temp;</span><br></pre></td></tr></table></figure>
+
+<h4 id="用户user-temp创建用户user-res的同义词（私有）"><a href="#用户user-temp创建用户user-res的同义词（私有）" class="headerlink" title="用户user_temp创建用户user_res的同义词（私有）"></a>用户user_temp创建用户user_res的同义词（私有）</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- Create the synonym </span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">synonym</span> fieid <span class="keyword">for</span> user_res.fieid;</span><br></pre></td></tr></table></figure>
+<h4 id="用户user-temp创建用户user-res的同义词（公有）"><a href="#用户user-temp创建用户user-res的同义词（公有）" class="headerlink" title="用户user_temp创建用户user_res的同义词（公有）"></a>用户user_temp创建用户user_res的同义词（公有）</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- Create the synonym </span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">public</span> <span class="keyword">synonym</span> tableA <span class="keyword">for</span> user_res.tableA;</span><br></pre></td></tr></table></figure>
+
+<p><em>注：在不同的数据库之间创建，需要创建link。</em></p>
+<h2 id="查询当前用户下的所有同义词"><a href="#查询当前用户下的所有同义词" class="headerlink" title="查询当前用户下的所有同义词"></a>查询当前用户下的所有同义词</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> user_synonyms;</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除同义词"><a href="#删除同义词" class="headerlink" title="删除同义词"></a>删除同义词</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">synonym</span> tableA;</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改同义词"><a href="#修改同义词" class="headerlink" title="修改同义词"></a>修改同义词</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">synonym</span> tableA ...;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>oracle</tag>
+        <tag>同义词</tag>
+        <tag>数据同步</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《最长的旅途》 ukulele 曲谱</title>
+    <url>/2018/07/22/ukulele-zcdlt/</url>
+    <content><![CDATA[<p><img src="/images/ukulele-zcdlt.jpg" alt="bg"></p>
+<a id="more"></a>
+<p><img src="/images/zcdltsolo.png" alt="name" title="转载自 尤克里里小站 面包小姐 （如有侵权，请联系博主删除）"></p>
+]]></content>
+      <categories>
+        <category>ukulele</category>
+      </categories>
+      <tags>
+        <tag>ukulele</tag>
+        <tag>曲谱</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《天空之城》 ukulele 单音版 曲谱</title>
+    <url>/2018/07/22/ukulele-tkzc/</url>
+    <content><![CDATA[<p><img src="/images/ukulele-tkzc.jpg" alt="bg"></p>
+<a id="more"></a>
+<p><img src="/images/tkzc.jpg" alt="name" title="转载自 尤克里里小站 白熊音乐 （如有侵权，请联系博主删除）"></p>
+]]></content>
+      <categories>
+        <category>ukulele</category>
+      </categories>
+      <tags>
+        <tag>ukulele</tag>
+        <tag>曲谱</tag>
+      </tags>
+  </entry>
+</search>
